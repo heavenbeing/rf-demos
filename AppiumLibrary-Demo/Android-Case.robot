@@ -23,3 +23,15 @@ case2-hasid
     Input Text    id=com.example.android.contactmanager:id/contactPhoneEditText    13800138000
     Input Text    id=com.example.android.contactmanager:id/contactEmailEditText    qitaos@gmail.com
     Click Element    accessibility_id=Save
+
+case3-loginDemo_Ateacher
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName=192.168.56.101:5555    app=${CURDIR}${/}app${/}LGTeacher.apk    appPackage=com.lg.newbackend
+    ${source}    Get Source
+    Log    ${source}
+    Sleep    5s
+    Click Element    xpath=//*[@resource-id="com.lg.newbackend:id/showfeatures_signIn"]
+    Input Text    xpath=//*[@resource-id="com.lg.newbackend:id/signIn_email"]    local@qqq.com
+    Input Text    xpath=//*[@resource-id="com.lg.newbackend:id/signIn_password"]    12345678abc
+    Click Element    xpath=//*[@resource-id="com.lg.newbackend:id/signin"]
+    Comment    Input Text    xpath=//android.widget.TableRow[contains(@index,7)]/android.widget.EditText    qitaos@gmail.com
+    Comment    Click Element    accessibility_id=Save
